@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PDF </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h2>TA/DA List</h2>
+  
+  <table class="table table-bordered">
+    <tr>
+      <th>Date</th>
+      <th>Name</th>
+      <th>Travel_cost</th>
+      <th>Lunch_cost</th>
+      <th>Instrument_cost</th>
+      <th>Total_cost</th>
+      <th>Payment Status</th>
+    </tr>
+    {% for data in tadas %}
+    <tr>
+      <td>{{ data.date }}</td>
+      <td>{{ data.name }}</td>
+      <td>{{ data.travel_cost }}</td>
+      <td>{{ data.lunch_cost }}</td>
+      <td>{{ data.instrument_cost }}</td>
+      <td>{{ data.total_cost }}</td>
+      <td>{{ data.Paid }} </td>
+    </tr>
+    {%endfor%}
+  </table>
+  
+
+</div>
+
+</body>
+</html>

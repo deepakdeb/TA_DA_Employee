@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Add TA/DA</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Horizontal form</h2>
+  
+  <form class="form-horizontal" action="/add" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="Date">Date:</label>
+      <div class="col-sm-6">
+        <input type="Date" class="form-control" id="date"  name="date" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Name:</label>
+      <div class="col-sm-6">
+        <select type="text" class="form-control" id="name"  name="name" required>
+          <option value="">Select Name</option>
+          {% for name in names %}
+          <option value="{{name.name}}">{{name.name}}</option>
+          {%endfor%}
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Travel cost:</label>
+      <div class="col-sm-6">          
+        <input type="text" class="form-control" id="t_cost" placeholder="Enter Travel cost" name="t_cost" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Lunch cost:</label>
+      <div class="col-sm-6">          
+        <input type="text" class="form-control" id="l_cost" placeholder="Enter Lunch cost" name="l_cost" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Instruments cost:</label>
+      <div class="col-sm-6">          
+        <input type="text" class="form-control" id="i_cost" placeholder="Enter Instruments cost" name="i_cost" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Status:</label>
+      <div class="col-sm-6">    
+        <select type="text" class="form-control" id="status"  name="status" required>
+          <option value="">Select Payment Status</option>
+          
+          <option value="paid">paid</option>
+          <option value="unpaid">unpaid</option>
+        </select>      
+      </div>
+    </div>
+   
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
