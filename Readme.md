@@ -9,4 +9,4 @@ Create a python environment with `conda create -n enviroment_name python=3.8` an
 # Workflow
 
 After installation go to the folder where manage.py folder located.Then run `python manage.py runserver`
-Now add url `/add`(http://127.0.0.1:8000/add) to add TA/DA data and add `/show` to see all TA/DA list and also you can download a pdf consist of all TA/DA entry.
+Now add url `/add`(http://127.0.0.1:8000/add) to add TA/DA data and add `/show`(http://127.0.0.1:8000/show) to see all TA/DA list and also you can download a pdf consist of all TA/DA entry.
